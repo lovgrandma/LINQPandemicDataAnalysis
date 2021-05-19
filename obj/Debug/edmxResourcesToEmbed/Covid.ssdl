@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CovidDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Continent">
+    <Key>
+      <PropertyRef Name="ContinentId" />
+    </Key>
+    <Property Name="ContinentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="continent" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CovidDB.dbo.Covid' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Covid">
+    <Key>
+      <PropertyRef Name="covidId" />
+    </Key>
+    <Property Name="covidId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iso_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="continentId" Type="int" />
+    <Property Name="locationId" Type="int" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="total_cases" Type="float" />
+    <Property Name="new_cases" Type="float" />
+    <Property Name="new_cases_smoothed" Type="float" />
+    <Property Name="total_deaths" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_deaths" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_deaths_smoothed" Type="float" />
+    <Property Name="total_cases_per_million" Type="float" />
+    <Property Name="new_cases_per_million" Type="float" />
+    <Property Name="new_cases_smoothed_per_million" Type="float" />
+    <Property Name="total_deaths_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_deaths_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_deaths_smoothed_per_million" Type="float" />
+    <Property Name="reproduction_rate" Type="nvarchar" MaxLength="255" />
+    <Property Name="icu_patients" Type="nvarchar" MaxLength="255" />
+    <Property Name="icu_patients_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="hosp_patients" Type="nvarchar" MaxLength="255" />
+    <Property Name="hosp_patients_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="weekly_icu_admissions" Type="nvarchar" MaxLength="255" />
+    <Property Name="weekly_icu_admissions_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="weekly_hosp_admissions" Type="nvarchar" MaxLength="255" />
+    <Property Name="weekly_hosp_admissions_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_tests" Type="nvarchar" MaxLength="255" />
+    <Property Name="total_tests" Type="nvarchar" MaxLength="255" />
+    <Property Name="total_tests_per_thousand" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_tests_per_thousand" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_tests_smoothed" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_tests_smoothed_per_thousand" Type="nvarchar" MaxLength="255" />
+    <Property Name="positive_rate" Type="nvarchar" MaxLength="255" />
+    <Property Name="tests_per_case" Type="nvarchar" MaxLength="255" />
+    <Property Name="tests_units" Type="nvarchar" MaxLength="255" />
+    <Property Name="total_vaccinations" Type="nvarchar" MaxLength="255" />
+    <Property Name="people_vaccinated" Type="nvarchar" MaxLength="255" />
+    <Property Name="people_fully_vaccinated" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_vaccinations" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_vaccinations_smoothed" Type="nvarchar" MaxLength="255" />
+    <Property Name="total_vaccinations_per_hundred" Type="nvarchar" MaxLength="255" />
+    <Property Name="people_vaccinated_per_hundred" Type="nvarchar" MaxLength="255" />
+    <Property Name="people_fully_vaccinated_per_hundred" Type="nvarchar" MaxLength="255" />
+    <Property Name="new_vaccinations_smoothed_per_million" Type="nvarchar" MaxLength="255" />
+    <Property Name="stringency_index" Type="float" />
+    <Property Name="population" Type="float" />
+    <Property Name="population_density" Type="float" />
+    <Property Name="median_age" Type="float" />
+    <Property Name="aged_65_older" Type="float" />
+    <Property Name="aged_70_older" Type="float" />
+    <Property Name="gdp_per_capita" Type="float" />
+    <Property Name="extreme_poverty" Type="nvarchar" MaxLength="255" />
+    <Property Name="cardiovasc_death_rate" Type="float" />
+    <Property Name="diabetes_prevalence" Type="float" />
+    <Property Name="female_smokers" Type="nvarchar" MaxLength="255" />
+    <Property Name="male_smokers" Type="nvarchar" MaxLength="255" />
+    <Property Name="handwashing_facilities" Type="float" />
+    <Property Name="hospital_beds_per_thousand" Type="float" />
+    <Property Name="life_expectancy" Type="float" />
+    <Property Name="human_development_index" Type="float" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Covid_Continent">
+    <End Role="Continent" Type="Self.Continent" Multiplicity="0..1" />
+    <End Role="Covid" Type="Self.Covid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Continent">
+        <PropertyRef Name="ContinentId" />
+      </Principal>
+      <Dependent Role="Covid">
+        <PropertyRef Name="continentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Covid_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Covid" Type="Self.Covid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Covid">
+        <PropertyRef Name="locationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CovidDBModelStoreContainer">
+    <EntitySet Name="Continent" EntityType="Self.Continent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Covid" EntityType="Self.Covid" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Covid_Continent" Association="Self.FK_Covid_Continent">
+      <End Role="Continent" EntitySet="Continent" />
+      <End Role="Covid" EntitySet="Covid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Covid_Location" Association="Self.FK_Covid_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Covid" EntitySet="Covid" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

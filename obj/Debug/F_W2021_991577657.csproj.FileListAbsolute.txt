@@ -1,0 +1,17 @@
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\F_W2021_991577657.exe.config
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\F_W2021_991577657.exe
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\F_W2021_991577657.pdb
+C:\Users\Jesse\source\repos\F_W2021_991577657\obj\Debug\F_W2021_991577657.csprojAssemblyReference.cache
+C:\Users\Jesse\source\repos\F_W2021_991577657\obj\Debug\F_W2021_991577657.csproj.CoreCompileInputs.cache
+C:\Users\Jesse\source\repos\F_W2021_991577657\obj\Debug\F_W2021_991577657.exe
+C:\Users\Jesse\source\repos\F_W2021_991577657\obj\Debug\F_W2021_991577657.pdb
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\EntityFramework.dll
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\EntityFramework.xml
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jesse\source\repos\F_W2021_991577657\obj\Debug\F_W2021_991577657.csproj.CopyComplete
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\MoreLinq.dll
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\System.ValueTuple.dll
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\MoreLinq.pdb
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\MoreLinq.xml
+C:\Users\Jesse\source\repos\F_W2021_991577657\bin\Debug\System.ValueTuple.xml

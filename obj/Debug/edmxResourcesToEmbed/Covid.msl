@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CovidDBModelStoreContainer" CdmEntityContainer="CovidDBEntities">
+    <EntitySetMapping Name="Continents">
+      <EntityTypeMapping TypeName="CovidDBModel.Continent">
+        <MappingFragment StoreEntitySet="Continent">
+          <ScalarProperty Name="ContinentId" ColumnName="ContinentId" />
+          <ScalarProperty Name="continent" ColumnName="continent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="CovidDBModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Covids">
+      <EntityTypeMapping TypeName="CovidDBModel.Covid">
+        <MappingFragment StoreEntitySet="Covid">
+          <ScalarProperty Name="covidId" ColumnName="covidId" />
+          <ScalarProperty Name="iso_code" ColumnName="iso_code" />
+          <ScalarProperty Name="continentId" ColumnName="continentId" />
+          <ScalarProperty Name="locationId" ColumnName="locationId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="total_cases" ColumnName="total_cases" />
+          <ScalarProperty Name="new_cases" ColumnName="new_cases" />
+          <ScalarProperty Name="new_cases_smoothed" ColumnName="new_cases_smoothed" />
+          <ScalarProperty Name="total_deaths" ColumnName="total_deaths" />
+          <ScalarProperty Name="new_deaths" ColumnName="new_deaths" />
+          <ScalarProperty Name="new_deaths_smoothed" ColumnName="new_deaths_smoothed" />
+          <ScalarProperty Name="total_cases_per_million" ColumnName="total_cases_per_million" />
+          <ScalarProperty Name="new_cases_per_million" ColumnName="new_cases_per_million" />
+          <ScalarProperty Name="new_cases_smoothed_per_million" ColumnName="new_cases_smoothed_per_million" />
+          <ScalarProperty Name="total_deaths_per_million" ColumnName="total_deaths_per_million" />
+          <ScalarProperty Name="new_deaths_per_million" ColumnName="new_deaths_per_million" />
+          <ScalarProperty Name="new_deaths_smoothed_per_million" ColumnName="new_deaths_smoothed_per_million" />
+          <ScalarProperty Name="reproduction_rate" ColumnName="reproduction_rate" />
+          <ScalarProperty Name="icu_patients" ColumnName="icu_patients" />
+          <ScalarProperty Name="icu_patients_per_million" ColumnName="icu_patients_per_million" />
+          <ScalarProperty Name="hosp_patients" ColumnName="hosp_patients" />
+          <ScalarProperty Name="hosp_patients_per_million" ColumnName="hosp_patients_per_million" />
+          <ScalarProperty Name="weekly_icu_admissions" ColumnName="weekly_icu_admissions" />
+          <ScalarProperty Name="weekly_icu_admissions_per_million" ColumnName="weekly_icu_admissions_per_million" />
+          <ScalarProperty Name="weekly_hosp_admissions" ColumnName="weekly_hosp_admissions" />
+          <ScalarProperty Name="weekly_hosp_admissions_per_million" ColumnName="weekly_hosp_admissions_per_million" />
+          <ScalarProperty Name="new_tests" ColumnName="new_tests" />
+          <ScalarProperty Name="total_tests" ColumnName="total_tests" />
+          <ScalarProperty Name="total_tests_per_thousand" ColumnName="total_tests_per_thousand" />
+          <ScalarProperty Name="new_tests_per_thousand" ColumnName="new_tests_per_thousand" />
+          <ScalarProperty Name="new_tests_smoothed" ColumnName="new_tests_smoothed" />
+          <ScalarProperty Name="new_tests_smoothed_per_thousand" ColumnName="new_tests_smoothed_per_thousand" />
+          <ScalarProperty Name="positive_rate" ColumnName="positive_rate" />
+          <ScalarProperty Name="tests_per_case" ColumnName="tests_per_case" />
+          <ScalarProperty Name="tests_units" ColumnName="tests_units" />
+          <ScalarProperty Name="total_vaccinations" ColumnName="total_vaccinations" />
+          <ScalarProperty Name="people_vaccinated" ColumnName="people_vaccinated" />
+          <ScalarProperty Name="people_fully_vaccinated" ColumnName="people_fully_vaccinated" />
+          <ScalarProperty Name="new_vaccinations" ColumnName="new_vaccinations" />
+          <ScalarProperty Name="new_vaccinations_smoothed" ColumnName="new_vaccinations_smoothed" />
+          <ScalarProperty Name="total_vaccinations_per_hundred" ColumnName="total_vaccinations_per_hundred" />
+          <ScalarProperty Name="people_vaccinated_per_hundred" ColumnName="people_vaccinated_per_hundred" />
+          <ScalarProperty Name="people_fully_vaccinated_per_hundred" ColumnName="people_fully_vaccinated_per_hundred" />
+          <ScalarProperty Name="new_vaccinations_smoothed_per_million" ColumnName="new_vaccinations_smoothed_per_million" />
+          <ScalarProperty Name="stringency_index" ColumnName="stringency_index" />
+          <ScalarProperty Name="population" ColumnName="population" />
+          <ScalarProperty Name="population_density" ColumnName="population_density" />
+          <ScalarProperty Name="median_age" ColumnName="median_age" />
+          <ScalarProperty Name="aged_65_older" ColumnName="aged_65_older" />
+          <ScalarProperty Name="aged_70_older" ColumnName="aged_70_older" />
+          <ScalarProperty Name="gdp_per_capita" ColumnName="gdp_per_capita" />
+          <ScalarProperty Name="extreme_poverty" ColumnName="extreme_poverty" />
+          <ScalarProperty Name="cardiovasc_death_rate" ColumnName="cardiovasc_death_rate" />
+          <ScalarProperty Name="diabetes_prevalence" ColumnName="diabetes_prevalence" />
+          <ScalarProperty Name="female_smokers" ColumnName="female_smokers" />
+          <ScalarProperty Name="male_smokers" ColumnName="male_smokers" />
+          <ScalarProperty Name="handwashing_facilities" ColumnName="handwashing_facilities" />
+          <ScalarProperty Name="hospital_beds_per_thousand" ColumnName="hospital_beds_per_thousand" />
+          <ScalarProperty Name="life_expectancy" ColumnName="life_expectancy" />
+          <ScalarProperty Name="human_development_index" ColumnName="human_development_index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

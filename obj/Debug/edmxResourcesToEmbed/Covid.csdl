@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CovidDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Continent">
+    <Key>
+      <PropertyRef Name="ContinentId" />
+    </Key>
+    <Property Name="ContinentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="continent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Covids" Relationship="Self.FK_Covid_Continent" FromRole="Continent" ToRole="Covid" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Covids" Relationship="Self.FK_Covid_Location" FromRole="Location" ToRole="Covid" />
+  </EntityType>
+  <EntityType Name="Covid">
+    <Key>
+      <PropertyRef Name="covidId" />
+    </Key>
+    <Property Name="covidId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="iso_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="continentId" Type="Int32" />
+    <Property Name="locationId" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="total_cases" Type="Double" />
+    <Property Name="new_cases" Type="Double" />
+    <Property Name="new_cases_smoothed" Type="Double" />
+    <Property Name="total_deaths" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_deaths" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_deaths_smoothed" Type="Double" />
+    <Property Name="total_cases_per_million" Type="Double" />
+    <Property Name="new_cases_per_million" Type="Double" />
+    <Property Name="new_cases_smoothed_per_million" Type="Double" />
+    <Property Name="total_deaths_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_deaths_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_deaths_smoothed_per_million" Type="Double" />
+    <Property Name="reproduction_rate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="icu_patients" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="icu_patients_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="hosp_patients" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="hosp_patients_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="weekly_icu_admissions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="weekly_icu_admissions_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="weekly_hosp_admissions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="weekly_hosp_admissions_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_tests" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="total_tests" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="total_tests_per_thousand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_tests_per_thousand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_tests_smoothed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_tests_smoothed_per_thousand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="positive_rate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tests_per_case" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tests_units" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="total_vaccinations" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="people_vaccinated" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="people_fully_vaccinated" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_vaccinations" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_vaccinations_smoothed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="total_vaccinations_per_hundred" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="people_vaccinated_per_hundred" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="people_fully_vaccinated_per_hundred" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new_vaccinations_smoothed_per_million" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="stringency_index" Type="Double" />
+    <Property Name="population" Type="Double" />
+    <Property Name="population_density" Type="Double" />
+    <Property Name="median_age" Type="Double" />
+    <Property Name="aged_65_older" Type="Double" />
+    <Property Name="aged_70_older" Type="Double" />
+    <Property Name="gdp_per_capita" Type="Double" />
+    <Property Name="extreme_poverty" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cardiovasc_death_rate" Type="Double" />
+    <Property Name="diabetes_prevalence" Type="Double" />
+    <Property Name="female_smokers" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="male_smokers" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="handwashing_facilities" Type="Double" />
+    <Property Name="hospital_beds_per_thousand" Type="Double" />
+    <Property Name="life_expectancy" Type="Double" />
+    <Property Name="human_development_index" Type="Double" />
+    <NavigationProperty Name="Continent" Relationship="Self.FK_Covid_Continent" FromRole="Covid" ToRole="Continent" />
+    <NavigationProperty Name="Location" Relationship="Self.FK_Covid_Location" FromRole="Covid" ToRole="Location" />
+  </EntityType>
+  <Association Name="FK_Covid_Continent">
+    <End Role="Continent" Type="Self.Continent" Multiplicity="0..1" />
+    <End Role="Covid" Type="Self.Covid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Continent">
+        <PropertyRef Name="ContinentId" />
+      </Principal>
+      <Dependent Role="Covid">
+        <PropertyRef Name="continentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Covid_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Covid" Type="Self.Covid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Covid">
+        <PropertyRef Name="locationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CovidDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Continents" EntityType="Self.Continent" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="Covids" EntityType="Self.Covid" />
+    <AssociationSet Name="FK_Covid_Continent" Association="Self.FK_Covid_Continent">
+      <End Role="Continent" EntitySet="Continents" />
+      <End Role="Covid" EntitySet="Covids" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Covid_Location" Association="Self.FK_Covid_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Covid" EntitySet="Covids" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
